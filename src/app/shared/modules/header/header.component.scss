@@ -1,0 +1,7 @@
+@use "styles";
+
+.header {
+  background: styles.$primary;
+  color: white;
+  position: relative;
+}
