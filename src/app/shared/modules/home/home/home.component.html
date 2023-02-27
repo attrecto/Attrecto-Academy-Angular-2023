@@ -4,11 +4,13 @@
 
         <div class="d-flex justify-content-between">
             <button (click)="increaseCounter()" class="btn btn-primary me-2">Increase +</button>
-            <button (click)="decreaseCounter()" class="btn btn-secondary me-2">Decrease -</button>
+            <button (click)="decreaseCounter()" [disabled]="decreaseDisabled" class="btn btn-secondary me-2">Decrease
+                -</button>
 
             <div>
                 <input [(ngModel)]="counter" type="text" class="form-control">
             </div>
         </div>
+        <p class="errorMsg">{{errorMessage}}</p>
     </div>
 </div>
