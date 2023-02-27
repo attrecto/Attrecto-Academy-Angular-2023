@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  @Input() counter: number = 0;
 
+  increaseCounter() {
+    this.counter++;
+  }
+
+  decreaseCounter() {
+    this.counter--;
+  }
 }
