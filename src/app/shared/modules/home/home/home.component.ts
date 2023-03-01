@@ -10,7 +10,7 @@ export class HomeComponent {
 
   @Input()
   set counter(value: number) {
-    if (value < 0)
+    if (value < 0 || isNaN(value))
       this._counter = 0;
     else
       this._counter = value;
