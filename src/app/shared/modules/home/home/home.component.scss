@@ -1,6 +1,49 @@
 .errorMsg {
     color: red;
     font-weight: bold;
-    vertical-align: middle;
+    vertical-align: center;
     text-align: center;
+    opacity: 0%;
+}
+
+.fadeIn {
+    opacity: 100%;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    animation-name: fromLeft;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.fadeOut {
+    opacity: 0%;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    animation-name: toRight;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fromLeft {
+    from {
+        transform: translateX(-200%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes toRight {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(200%);
+    }
 }

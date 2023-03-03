@@ -1,7 +1,6 @@
 <div class="d-flex justify-content-center pt-4 flex-column align-items-center">
     <div class="card p-4 d-flex">
         <h1 class="text-center">Counter: {{ counter }}</h1>
-
         <div class="d-flex justify-content-between">
             <button (click)="increaseCounter()" class="btn btn-primary me-2">Increase +</button>
             <button (click)="decreaseCounter()" [disabled]="lessThan0" class="btn btn-secondary me-2">Decrease
@@ -12,5 +11,5 @@
             </div>
         </div>
     </div>
-    <p class="errorMsg alert alert-danger m-2" *ngIf="lessThan0">{{errorMessage}}</p>
+    <p class="errorMsg alert alert-danger m-2">{{errorMessage}}</p>
 </div>
