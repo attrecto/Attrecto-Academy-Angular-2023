@@ -1,3 +1,19 @@
 <nav class="navbar p-2 header">
-  <h4>{{title}}</h4>
+  <div class="d-flex">
+    <a class="nav-link me-2"
+       [routerLinkActive]="'active'"
+       [routerLink]="'/home'">
+      Home
+    </a>
+    <a class="nav-link me-2"
+       [routerLinkActive]="'active'"
+       [routerLink]="'/users'">
+      Users
+    </a>
+    <a class="nav-link me-2"
+       [routerLinkActive]="'active'"
+       [routerLink]="'/badges'">
+      Badges
+    </a>
+  </div>
 </nav>
