@@ -7,12 +7,17 @@ import {Component, Input} from '@angular/core';
 })
 export class HomeComponent {
   @Input() counter: number = 0;
+  warningMessage: string = "";
 
   increaseCounter() {
     this.counter++;
+    this.warningMessage = "";
   }
 
   decreaseCounter() {
-    this.counter--;
+    if (this.counter > 0)
+      this.counter--;
+    else
+      this.warningMessage = "Counter cannot be negative";
   }
 }
