@@ -7,8 +7,10 @@
             <button (click)="decreaseCounter()" class="btn btn-secondary me-2">Decrease -</button>
 
             <div>
-                <input [(ngModel)]="counter" type="text" class="form-control">
+                <input [(ngModel)]="counter"  type="text" class="form-control">
             </div>
+            
         </div>
+        <p class="alert alert-danger">{{errorMsg}}</p>
     </div>
 </div>
