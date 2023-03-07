@@ -11,5 +11,5 @@
             </div>
         </div>
     </div>
-    <p class="errorMsg alert alert-danger m-2">{{errorMessage}}</p>
+    <p class="errorMsg alert alert-danger m-2" *ngIf="lessThan0">{{errorMessage}}</p>
 </div>

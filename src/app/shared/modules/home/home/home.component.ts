@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import * as $ from "jquery";
 
 @Component({
   selector: 'app-home',
@@ -14,15 +13,11 @@ export class HomeComponent {
   set counter(value: number) {
     if (value < 0 || isNaN(value)) {
       this._counter = 0;
-      if (this.lessThan0) {
-        this.applyFadeOut();
-      }
+      if (this.lessThan0) this.lessThan0 = false;
     }
     else {
       this._counter = value;
-      if (this.lessThan0) {
-        this.applyFadeOut();
-      }
+      if (this.lessThan0) this.lessThan0 = false;
     }
   }
   get counter() {
@@ -31,26 +26,11 @@ export class HomeComponent {
 
   increaseCounter() {
     this.counter++;
-    if (this.lessThan0) {
-      this.applyFadeOut();
-    }
+    if (this.lessThan0) this.lessThan0 = false;
   }
 
   decreaseCounter() {
     if (this.counter > 0) this.counter--;
-    else {
-      this.applyFadeIn();
-    }
-  }
-
-  applyFadeIn() {
-    this.lessThan0 = true;
-    $(".errorMsg").removeClass("fadeOut");
-    $(".errorMsg").addClass("fadeIn");
-  }
-  applyFadeOut() {
-    this.lessThan0 = false;
-    $(".errorMsg").removeClass("fadeIn");
-    $(".errorMsg").addClass("fadeOut");
+    else this.lessThan0 = true;
   }
 }
