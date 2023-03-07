@@ -35,5 +35,8 @@
   },
   "exclude": [
     "e2e"
+  ],
+  "typeRoots": [
+    "node_modules/@types"
   ]
 }
