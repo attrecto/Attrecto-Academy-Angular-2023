@@ -8,8 +8,10 @@ import {BadgesComponent} from "./pages/badges/badges/badges.component";
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'users', component: UsersComponent },
+
     { path: 'badges',component: BadgesComponent },
     { path: '**', redirectTo: 'home'}
+
 ];
 
 @NgModule({
@@ -18,5 +20,7 @@ const routes: Routes = [
         CommonModule,
         RouterModule.forRoot(routes)
     ],
+
 })
 export class AppRoutingModule {}
+

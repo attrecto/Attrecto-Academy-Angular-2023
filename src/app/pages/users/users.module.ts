@@ -5,8 +5,19 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 
 
 
+
 @NgModule({
+
   declarations: [UsersComponent, UserCardComponent],
   imports: [CommonModule],
 })
-export class UsersModule {}
+export class UsersModule {
+
+  declarations: [
+      UsersComponent
+  ]
+  imports: [
+    CommonModule
+  ]
+}
+
