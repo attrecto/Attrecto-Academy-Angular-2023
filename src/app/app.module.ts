@@ -8,6 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './pages/users/users.module';
 import { HttpClientModule } from '@angular/common/http';
 
+
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, HeaderModule, HomeModule, AppRoutingModule, RouterModule, UsersModule, HttpClientModule],
