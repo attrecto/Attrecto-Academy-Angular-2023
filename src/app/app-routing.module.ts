@@ -4,12 +4,13 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./shared/modules/home/home/home.component";
 import {UsersComponent} from "./pages/users/users.component";
 import {BadgesComponent} from "./pages/badges/badges/badges.component";
+import {NotFoundPageComponent} from "./pages/not-found-page/not-found-page.component";
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'users', component: UsersComponent },
     { path: 'badges',component: BadgesComponent },
-    { path: '**', redirectTo: 'home'}
+    { path: '**', component: NotFoundPageComponent}
 ];
 
 @NgModule({
