@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './pages/users/users.module';
 import { HttpClientModule } from '@angular/common/http';
+import {PagenotfoundComponent} from "./pages/users/components/pageNotFound/pagenotfound/pagenotfound.component";
+import {UserCardComponent} from "./pages/users/components/user-card/user-card.component";
 
 @NgModule({
   declarations: [AppComponent],
