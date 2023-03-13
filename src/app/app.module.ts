@@ -7,10 +7,11 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './pages/users/users.module';
 import { HttpClientModule } from '@angular/common/http';
+import {UserCreateModule} from "./pages/user-create/user-create.module";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HeaderModule, HomeModule, AppRoutingModule, RouterModule, UsersModule, HttpClientModule],
+  imports: [BrowserModule, HeaderModule, HomeModule, AppRoutingModule, RouterModule, UsersModule, UserCreateModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
