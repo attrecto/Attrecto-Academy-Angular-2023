@@ -8,10 +8,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './pages/users/users.module';
 import { HttpClientModule } from '@angular/common/http';
 import {UserCreateModule} from "./pages/user-create/user-create.module";
+import {UserEditModule} from "./pages/user-edit/user-edit.module";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HeaderModule, HomeModule, AppRoutingModule, RouterModule, UsersModule, UserCreateModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    HeaderModule, HomeModule,
+    AppRoutingModule, RouterModule,
+    UsersModule,
+    UserCreateModule,
+    UserEditModule,
+    HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

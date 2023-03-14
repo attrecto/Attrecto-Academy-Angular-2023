@@ -12,4 +12,12 @@ export class UserService {
   getUsers() {
     return this.http.get<User[]>(`${environment.apiUrl}/users`);
   }
+
+  getUser(userId: number) {
+    return this.http.get<User>(`${environment.apiUrl}/users/${userId}`);
+  }
+
+  createUser(user: User){
+    return this.http.post(environment.apiUrl + '/users', user);
+  }
 }
