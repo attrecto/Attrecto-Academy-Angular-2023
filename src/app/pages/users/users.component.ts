@@ -28,6 +28,12 @@ export class UsersComponent implements OnInit {
   navigateToCreateUser(){
     this.router.navigate(['user-create']);
   }
+  navigateToTableUsers(){
+    this.router.navigate(['users-table']);
+  }
+  navigateToCardUsers(){
+    this.router.navigate(['users']);
+  }
 
   navigateToEditUser(userId: number) {
     this.router.navigateByUrl(`user-edit/${userId}`);

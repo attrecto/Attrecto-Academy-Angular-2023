@@ -4,6 +4,15 @@
     </button>
 </div>
 
+<div class="py-2">
+    <button (click)="navigateToCardUsers()" class="btn btn-primary">
+        Card
+    </button>
+    <button (click)="navigateToTableUsers()" class="btn btn-primary">
+        Table
+    </button>
+</div>
+
 <div class="container my-4">
     <div class="row g-4">
         <div *ngFor="let user of users" class="col-4">
