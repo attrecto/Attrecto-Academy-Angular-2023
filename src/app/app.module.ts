@@ -25,5 +25,8 @@ import { UserEditModule } from './pages/user-edit/user-edit.module';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [
+
+  ]
 })
 export class AppModule {}

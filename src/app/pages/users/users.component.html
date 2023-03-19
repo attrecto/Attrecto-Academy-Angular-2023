@@ -1,16 +1,41 @@
 <div class="py-2">
+    <button (click)="SwitchToTableView()" class="btn btn-primary">
+        Table view
+    </button>
+    <button (click)="SwitchToCardView()" class="btn btn-primary">
+        Card view
+    </button>
+</div>
+
+<div class="py-2">
     <button (click)="navigateToCreateUser()" class="btn btn-primary">
         Create
     </button>
 </div>
 
-<div class="container my-4">
-    <div class="row g-4">
+<div *ngIf="this.cardView" class="container my-4">
+     <div   class="row g-4">
         <div *ngFor="let user of users" class="col-4">
             <app-user-card
                 (click)="navigateToEditUser(user.id)"
                 [user]="user">
             </app-user-card>
         </div>
-    </div>
+     </div>
+
+
 </div>
+<div *ngIf="!this.cardView" class="container my-4">
+    <app-users-table  [users]=users>
+    </app-users-table>
+</div>
+
+
+
+
+
+
+
+
+
+

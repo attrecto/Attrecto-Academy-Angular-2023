@@ -1,0 +1,12 @@
+<div  class="container my-4">
+    <div class="row g-4">
+        <table *ngFor="let user of users" class="table">
+            <tr  (click)="navigateToEditUser(user.id)" >
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td><img class="w-50" [src]="user.image" alt="user-avatar"></td>
+
+            </tr>
+        </table>
+    </div>
+</div>
