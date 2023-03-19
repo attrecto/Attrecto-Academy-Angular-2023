@@ -34,7 +34,7 @@ export class UsersComponent implements OnInit {
     this.router.navigateByUrl(`user-edit/${userId}`);
   }
 
-  switchView() {
+  nezetValtas() {
     this.cardView = !this.cardView;
   }
 }
