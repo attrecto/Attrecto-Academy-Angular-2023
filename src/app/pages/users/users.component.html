@@ -6,6 +6,7 @@
     <button class="btn btn-secondary mx-1" [disabled]="!cardView" (click)="nezetValtas()">Táblás nézet</button>
 </div>
 
+
 <div class="container my-4">
     <div class="row g-4" *ngIf="cardView">
         <div *ngFor="let user of users" class="col-4">
