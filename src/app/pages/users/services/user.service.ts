@@ -18,6 +18,14 @@ export class UserService {
   }
 
   createUser(user: User) {
-    return this.http.post(environment.apiUrl + '/users', user);
+    return this.http.post(`${environment.apiUrl}/users`, user);
+  }
+
+  updateUser(id: number, user: User) {
+    return this.http.put(`${environment.apiUrl}/users/${id}`, user);
+  }
+
+  deleteUser(id: number) {
+    return this.http.delete(`${environment.apiUrl}/users/${id}`);
   }
 }

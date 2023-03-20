@@ -9,6 +9,8 @@
         <div *ngFor="let user of users" class="col-4">
             <app-user-card
                 (click)="navigateToEditUser(user.id)"
+                (deleteClicked)="deleteUser($event)"
+                [badges]="badges"
                 [user]="user">
             </app-user-card>
         </div>

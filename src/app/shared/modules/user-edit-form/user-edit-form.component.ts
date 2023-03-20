@@ -29,10 +29,19 @@ export class UserEditFormComponent implements OnInit {
 
   saveForm() {
     const userFormData = this.userCreateForm.getRawValue();
-    this.userService.createUser(userFormData).subscribe({
-      next: () => {
-        this.router.navigate(['users']);
-      }
-    });
+
+    if (this.user) {
+      this.userService.updateUser(this.user.id, userFormData).subscribe({
+        next: () => {
+          this.router.navigate(['users']);
+        }
+      });
+    } else {
+      this.userService.createUser(userFormData).subscribe({
+        next: () => {
+          this.router.navigate(['users']);
+        }
+      });
+    }
   }
 }
