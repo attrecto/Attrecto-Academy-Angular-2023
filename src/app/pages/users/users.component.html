@@ -2,9 +2,22 @@
     <button (click)="navigateToCreateUser()" class="btn btn-primary">
         Create
     </button>
+    <div class="float-end">
+        <button class="btn btn-outline-primary m-1" (click)="switchToTableView()">
+            Table
+        </button>
+        <button class="btn btn-outline-primary m-1" (click)="switchToCardView()">
+            Card
+        </button>
+    </div>
 </div>
 
-<div class="container my-4">
+
+<div *ngIf="tableView" class="container my-4">
+    <app-user-table  [users]="users"></app-user-table>
+</div>
+
+<div *ngIf="!tableView" class="container my-4">
     <div class="row g-4">
         <div *ngFor="let user of users" class="col-4">
             <app-user-card

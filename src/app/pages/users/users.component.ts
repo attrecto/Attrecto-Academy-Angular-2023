@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-
+  tableView: boolean = false;
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
@@ -31,5 +31,13 @@ export class UsersComponent implements OnInit {
 
   navigateToEditUser(userId: number) {
     this.router.navigateByUrl(`user-edit/${userId}`);
+  }
+
+  switchToTableView() {
+    this.tableView = true;
+  }
+
+  switchToCardView() {
+    this.tableView = false;
   }
 }

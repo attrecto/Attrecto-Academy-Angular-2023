@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Router} from "@angular/router";
+import {User} from "../../classes/User";
 
 @Component({
   selector: 'app-user-table',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-table.component.scss']
 })
 export class UserTableComponent {
+  @Input()
+  users: User[];
+  constructor(private router: Router) {}
+
+  navigateToEditUser(userId: number) {
+    this.router.navigateByUrl(`user-edit/${userId}`);
+  }
 
 }

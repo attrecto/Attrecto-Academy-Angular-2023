@@ -1,1 +1,17 @@
-<p>user-table works!</p>
+<div  class="container my-4">
+    <div class="row g-4">
+        <table *ngFor="let user of users" class="table">
+            <tr (click)="navigateToEditUser(user.id)" class="border">
+                <td class="border w-25 text-center">
+                    {{user.id}}
+                </td>
+                <td class="border w-25 text-center">
+                    {{user.name}}
+                </td>
+                <td class="border w-25">
+                    <img [src]="user.image">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
