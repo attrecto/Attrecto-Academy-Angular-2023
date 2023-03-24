@@ -1,4 +1,14 @@
-<div class="card">
+<div class="card position-relative">
+    <button (click)="deleteUser(user.id, $event)" class="delete-btn btn btn-warning">
+        X
+    </button>
+
+    <div class="user-badges d-flex">
+        <div *ngFor="let userBadge of user.badges" class="user-badge">
+            <img [src]="getBadgeImage(userBadge.id)" />
+        </div>
+    </div>
+
     <div class="user-image">
         <img class="w-100" [src]="user.image" alt="user-avatar">
     </div>

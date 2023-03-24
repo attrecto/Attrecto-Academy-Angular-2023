@@ -9,15 +9,23 @@ import { User } from '../classes/User';
 export class UserService {
   constructor(private http: HttpClient) {}
 
-  getUsers() {
-    return this.http.get<User[]>(`${environment.apiUrl}/users`);
-  }
-
   getUser(userId: number) {
     return this.http.get<User>(`${environment.apiUrl}/users/${userId}`);
   }
 
-  createUser(user: User){
-    return this.http.post(environment.apiUrl + '/users', user);
+  getUsers() {
+    return this.http.get<User[]>(`${environment.apiUrl}/users`);
+  }
+
+  createUser(user: User) {
+    return this.http.post(`${environment.apiUrl}/users`, user);
+  }
+
+  updateUser(id: number, user: User) {
+    return this.http.put(`${environment.apiUrl}/users/${id}`, user);
+  }
+
+  deleteUser(id: number) {
+    return this.http.delete(`${environment.apiUrl}/users/${id}`);
   }
 }
