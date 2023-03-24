@@ -10,7 +10,19 @@ import { Badge } from '../classes/badge';
 export class BadgeService {
   constructor(private httpClient: HttpClient) { }
 
+  getBadge(badgeId: number) {
+    return this.httpClient.get<Badge>(`${environment.apiUrl}/badges/${badgeId}`);
+  }
   getBadges(): Observable<Badge[]> {
     return this.httpClient.get<Badge[]>(`${environment.apiUrl}/badges`);
+  }
+  createBadge(badge: Badge) {
+    return this.httpClient.post(`${environment.apiUrl}/badges`, badge);
+  }
+  updateBadge(badgeId: number, badge: Badge) {
+    return this.httpClient.put(`${environment.apiUrl}/badges/${badgeId}`, badge);
+  }
+  deleteBadge(badgeId: number) {
+    return this.httpClient.delete(`${environment.apiUrl}/badges/${badgeId}`);
   }
 }
