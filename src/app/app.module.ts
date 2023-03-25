@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserCreateModule } from './pages/user-create/user-create.module';
 import { UserEditModule } from './pages/user-edit/user-edit.module';
 import { BadgesModule } from './pages/badges/badges.module';
+import {BadgeEditModule} from "./pages/badge-edit/badge-edit.module";
+import {BadgeCreateModule} from "./pages/badge-create/badge-create.module";
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { BadgesModule } from './pages/badges/badges.module';
     UserCreateModule,
     UserEditModule,
     HttpClientModule,
-    BadgesModule
+    BadgesModule,
+    BadgeEditModule,
+    BadgeCreateModule
   ],
   providers: [],
   bootstrap: [AppComponent],
