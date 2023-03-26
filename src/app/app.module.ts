@@ -10,9 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserCreateModule } from './pages/user-create/user-create.module';
 import { UserEditModule } from './pages/user-edit/user-edit.module';
 import { BadgesModule } from './pages/badges/badges.module';
+import { BadgeCreateComponent } from './pages/badge-create/badge-create.component';
+import { BadgeEditComponent } from './pages/badge-edit/badge-edit.component';
+import { BadgeEditFormComponent } from './shared/modules/badge-edit-form/badge-edit-form.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, BadgeCreateComponent, BadgeEditComponent, BadgeEditFormComponent],
   imports: [
     BrowserModule,
     HeaderModule,
