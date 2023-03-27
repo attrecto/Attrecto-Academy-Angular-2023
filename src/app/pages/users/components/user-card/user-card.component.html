@@ -3,7 +3,7 @@
         X
     </button>
 
-    <div class="user-badges d-flex">
+    <div *ngIf="badges" class="user-badges d-flex">
         <div *ngFor="let userBadge of user.badges" class="user-badge">
             <img [src]="getBadgeImage(userBadge.id)" />
         </div>

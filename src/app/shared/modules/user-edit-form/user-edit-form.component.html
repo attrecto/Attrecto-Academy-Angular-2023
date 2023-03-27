@@ -2,21 +2,39 @@
     <form [formGroup]="userCreateForm" class="p-3">
         <div class="mb-3">
             <label class="form-label">
-                Name
+                Name <span *ngIf="userCreateForm | isControlRequired:'name'">*</span>
             </label>
             <div>
                 <input formControlName="name" class="form-control" name="name">
+            </div>
+            <div *ngIf="userCreateForm | isControlInvalid:'name'">
+                Value is invalid!
+            </div>
+            <div *ngIf="userCreateForm | isControlHasRequiredError:'name'">
+                Value is required!
             </div>
         </div>
 
         <div class="mb-3">
             <label class="form-label">
-                Image
+                Image <span *ngIf="userCreateForm | isControlRequired:'image'">*</span>
             </label>
             <div>
                 <input formControlName="image" class="form-control" name="image">
             </div>
+            <div *ngIf="userCreateForm | isControlInvalid:'image'">
+                Value is invalid!
+            </div>
         </div>
+
+        <ng-container *ngIf="badges">
+            <div *ngFor="let badge of badges"
+                 (click)="toggleSelectedBadge(badge.id)"
+                 [class.selected]="selectedBadges[badge.id]"
+                 class="badge m-1 user-badge">
+                {{badge.name}}
+            </div>
+        </ng-container>
 
         <div class="mb-3">
             <button (click)="saveForm()"
