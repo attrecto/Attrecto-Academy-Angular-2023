@@ -10,23 +10,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserCreateModule } from './pages/user-create/user-create.module';
 import { UserEditModule } from './pages/user-edit/user-edit.module';
 import { BadgesModule } from './pages/badges/badges.module';
-import { BadgeCreateComponent } from './pages/badge-create/badge-create.component';
-import { BadgeEditComponent } from './pages/badge-edit/badge-edit.component';
-import { BadgeEditFormComponent } from './shared/modules/badge-edit-form/badge-edit-form.component';
+import {BadgeCreateModule} from "./pages/badge-create/badge-create.module";
+import {BadgeEditModule} from "./pages/badge-edit/badge-edit.module";
 
 @NgModule({
-  declarations: [AppComponent, BadgeCreateComponent, BadgeEditComponent, BadgeEditFormComponent],
+  declarations: [AppComponent,],
   imports: [
-    BrowserModule,
-    HeaderModule,
-    HomeModule,
-    AppRoutingModule,
-    RouterModule,
-    UsersModule,
-    UserCreateModule,
-    UserEditModule,
-    HttpClientModule,
-    BadgesModule
+      BrowserModule,
+      HeaderModule,
+      HomeModule,
+      AppRoutingModule,
+      RouterModule,
+      UsersModule,
+      UserCreateModule,
+      UserEditModule,
+      HttpClientModule,
+      BadgesModule,
+      BadgeCreateModule,
+      BadgeEditModule
   ],
   providers: [],
   bootstrap: [AppComponent],

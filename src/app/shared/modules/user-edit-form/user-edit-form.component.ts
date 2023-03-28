@@ -29,7 +29,6 @@ export class UserEditFormComponent implements OnInit {
 
   saveForm() {
     const userFormData = this.userCreateForm.getRawValue();
-
     if (this.user) {
       this.userService.updateUser(this.user.id, userFormData).subscribe({
         next: () => {
