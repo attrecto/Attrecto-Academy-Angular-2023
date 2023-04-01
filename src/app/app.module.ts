@@ -6,13 +6,15 @@ import { HomeModule } from './shared/modules/home/home.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './pages/users/users.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UserCreateModule } from './pages/user-create/user-create.module';
 import { UserEditModule } from './pages/user-edit/user-edit.module';
 import { BadgesModule } from './pages/badges/badges.module';
+import { LoadPageComponent } from './pages/load-page/load-page.component';
+import { LoaderInterceptorInterceptor } from './shared/loader/loader-interceptor.interceptor';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoadPageComponent],
   imports: [
     BrowserModule,
     HeaderModule,
@@ -25,7 +27,11 @@ import { BadgesModule } from './pages/badges/badges.module';
     HttpClientModule,
     BadgesModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoaderInterceptorInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
