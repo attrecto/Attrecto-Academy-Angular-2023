@@ -10,9 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserCreateModule } from './pages/user-create/user-create.module';
 import { UserEditModule } from './pages/user-edit/user-edit.module';
 import { BadgesModule } from './pages/badges/badges.module';
+import { LoaderComponent } from './pages/loader/loader.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {LoaderInterceptor} from "./shared/interceptors/loader.interceptor";
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoaderComponent],
   imports: [
     BrowserModule,
     HeaderModule,
@@ -23,9 +28,15 @@ import { BadgesModule } from './pages/badges/badges.module';
     UserCreateModule,
     UserEditModule,
     HttpClientModule,
-    BadgesModule
+    BadgesModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
